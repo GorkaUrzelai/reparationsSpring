@@ -2,7 +2,8 @@
 
     <div class="container-fluid">
         <a class="navbar-brand" href="#">Hola Gorka</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse ms-4" id="navbarSupportedContent">
@@ -17,9 +18,8 @@
                     <a class="nav-link border" th:href="@{/profile}">Perfil</a>
                 </li>
             </ul>
-            <button class="btn btn-outline-primary mx-3" type="Login" id="btnLogin"><a   th:href="@{/login}">Login</a></button>
-            <button class="btn btn-outline-primary mx-3" type="SignUp" id="btnSignUp"><a th:href="@{/register}">Sign up</a></button>
-
+            <button class="btn btn-outline-primary mx-3" type="submit" id="btnLogout"><a th:href="@{/}">Logout</a>
+            </button>
         </div>
     </div>
 </nav>
