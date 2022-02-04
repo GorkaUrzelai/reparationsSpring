@@ -1,0 +1,53 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>You first Spring application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <div th:replace="/includes/header_common_links"></div> <!-- todos los css -->
+</head>
+<body>
+<header>
+    <nav th:replace="/includes/header :: header_fragment"></nav>
+</header>
+<main>
+    <form th:action="@{/process_register}" th:object="${customer}" method="post" class="text-center">
+        <fieldset>
+            <div>
+                <label for="username">Nombre de usuario <b>*</b></label>
+                <div>
+                    <input th:field="*{username}" type="text" id="username" name="username" placeholder=""
+                           required="required" autocomplete="off">
+                </div>
+            </div>
+            <!--<div>
+                <label for="firstName">Tu nombre <b>*</b></label>
+                <div>
+                    <input th:field="*{firstName}" type="text" id="firstName" name="firstName" placeholder=""
+                           required="required" autocomplete="off">
+                </div>
+            </div>
+            <div>
+                <label for="firstName">Email <b>*</b></label>
+                <div>
+                    <input th:field="*{email}" type="email" id="email" name="email" placeholder=""
+                           required="required">
+                </div>
+            </div>
+            <div>-->
+                <label for="password">Contraseña <b>*</b></label>
+                <div>
+                    <input th:field="*{password}" type="password" id="password" name="password" placeholder=""
+                           required="required">
+                </div>
+            </div>
+            <div>
+                <button type="submit">Register</button>
+            </div>
+        </fieldset>
+
+    </form>
+</main>
+<footer th:replace="/includes/footer :: footer"></footer>
+<div th:replace="/includes/footer_common_links"></div> <!-- todos los js -->
+</body>
+</html>

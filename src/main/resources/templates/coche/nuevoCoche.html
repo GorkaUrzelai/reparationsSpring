@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <div th:replace="/includes/header_common_links"></div> <!-- todos los css -->
+</head>
+<body>
+<main>
+    <header>
+        <nav th:replace="/includes/header :: header_fragment"></nav>
+    </header>
+    <!-- VENTANA PRINCIPAL -->
+    <div class="d-flex justify-content-center">
+        <section class="text-center mt-4 py-3 px-2 rounded" id="cartaNuevoCoche">
+            <h2 class="mb-2">Escriba la informacion de su coche</h2>
+            <div class="d-flex justify-content-center mt-lg-4 mt-md-3 mt-sm-2">
+                <div class="w-lg-25 ">
+                    <div class="form-outline form-white mb-4 ">
+                        <h6 class="form-label" for="nombre">Nombre</h6>
+
+                        <input type="text" id="nombre" class="form-control form-control-lg"/>
+                    </div>
+
+                    <div class="form-outline form-white mb-4 ">
+                        <h6 class="form-label" for="kilometros">Kilometros</h6>
+
+                        <input type="number" id="kilometros" class="form-control form-control-lg text-center"/>
+                    </div>
+                    <div class="d-flex justify-content-end d-grid gap-2" id="acciones">
+                        <button class="btn btn-danger"><a href="/">Cancelar</a></button>
+                        <button class="btn btn-success"><a href="/">Guardar</a></button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </div>
+    <!-- VENTANA PRINCIPAL -->
+</main>
+<footer th:replace="/includes/footer :: footer"></footer>
+<div th:replace="/includes/footer_common_links"></div> <!-- todos los js -->
+</body>
+</html>

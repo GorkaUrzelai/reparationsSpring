@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <div th:replace="/includes/header_common_links"></div> <!-- todos los css -->
+    <link rel="stylesheet" th:href="@{css/coches.css}">
+</head>
+<body>
+<main>
+    <header>
+        <nav th:replace="/includes/header :: header_fragment"></nav>
+    </header>
+    <div class="container mt-5">
+        <div class=" d-grid gap-2 d-flex justify-content-end my-2" id="acciones">
+            <button class="btn btn-success"><a th:href="@{/coche/nuevo}">NUEVO COCHE</a></button>
+        </div>
+        <div class="row text-center ">
+
+            <!-- Carta coche -->
+            <div class="col-xl-3 col-sm-6 mb-5">
+                <div class="bg-white rounded shadow-sm pt-5 pb-4 px-4 cartaCoche"><img
+                        src="https://www.pngplay.com/wp-content/uploads/6/Audi-Icon-Background-PNG-Image.png" alt=""
+                        width="100" class="img-fluid mb-3 img-thumbnail shadow-sm imagenCarta">
+                    <h5 class="mb-0 mt-1">Audi A3 1999</h5>
+                    <!-- <span class="small text-uppercase text-muted">CEO - Founder</span> Aquí iría alguna info del coche (Threads jeje) -->
+                    <ul class="mb-0 list-inline mt-4">
+                        <li class="list-inline-item"><a href="#" class="botonAjustes"><i class="fa fa-solid fa-eye"></i></a>
+                        </li>
+                        <li class="list-inline-item"><a href="#" class="botonAjustes"><i
+                                class="fab fa-solid fa-gear"></i></a></li>
+                        <li class="list-inline-item"><a href="#" class="botonAjustes"><i
+                                class="fa fa-solid fa-trash"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- End -->
+        </div>
+    </div>
+</main>
+<footer th:replace="/includes/footer :: footer"></footer>
+<div th:replace="/includes/footer_common_links"></div> <!-- todos los js -->
+</body>
+</html>
