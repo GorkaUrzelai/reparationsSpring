@@ -2,6 +2,8 @@ package reparaciones.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.User;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -39,7 +41,15 @@ public class AppController {
     }
 
     @GetMapping({"/perfil"})
-    public String perfil() {
+    public String perfil(Model model) {
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String userName = user.getUsername();
+        Optional<Customer> customer = customerRepository.findByUsername(userName);
+        Customer c = null;
+        if (customer.isPresent()) {
+            c = customer.get();
+        }
+        model.addAttribute("customer", c);
         return "perfil";
     }
 
@@ -48,7 +58,7 @@ public class AppController {
         model.addAttribute("customer", new Customer());
         return "register";
     }
-    
+
 
     @PostMapping("/process_register")
     public String processRegisterCustomer(Model model, Customer customerApp,
