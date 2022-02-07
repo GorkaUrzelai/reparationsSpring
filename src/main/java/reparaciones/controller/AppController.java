@@ -1,7 +1,9 @@
 package reparaciones.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -10,8 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import reparaciones.ReparationscalendarApplication;
 import reparaciones.domain.Authority.Authority;
 import reparaciones.domain.Customer.DAO.CustomerRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import reparaciones.domain.Customer.Model.Customer;
 
 import javax.persistence.EntityExistsException;
@@ -36,11 +36,6 @@ public class AppController {
     @GetMapping({"/home"})
     public String index() {
         return "index";
-    }
-
-    @GetMapping({"/coches"})
-    public String coches() {
-        return "coches";
     }
 
     @GetMapping("/register")

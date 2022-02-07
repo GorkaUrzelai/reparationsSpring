@@ -1,0 +1,14 @@
+<!-- Carta coche -->
+<div class="bg-white rounded shadow-sm pt-5 pb-4 px-4">
+    <a th:href="@{'/coche/' + ${coche.cocheID}}">
+        <h1 class="mb-0 mt-1" th:text="${coche.nombre}"></h1>
+        <!-- <span class="small text-uppercase text-muted">CEO - Founder</span> Aquí iría alguna info del coche (Threads jeje) -->
+        <ul class="mb-0 list-inline mt-4">
+            <li class="list-inline-item"><a href="#" class="botonAjustes"><i class="fa fa-solid fa-eye"></i></a>
+            </li>
+            <li class="list-inline-item"><a href="#" class="botonAjustes"><i
+                    class="fa fa-solid fa-trash"></i></a></li>
+        </ul>
+    </a>
+</div>
+<!-- End -->

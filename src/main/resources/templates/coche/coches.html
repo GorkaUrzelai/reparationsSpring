@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Login</title>
+    <div th:replace="/includes/header_common_links"></div>
+    <!-- <link rel="stylesheet" th:href="@{css/coches.css}"> -->
+</head>
+<body>
+<main>
+    <header>
+        <nav th:replace="/includes/header :: header_fragment"></nav>
+    </header>
+    <div class="container mt-5">
+        <div class=" d-grid gap-2 d-flex justify-content-end my-2" id="acciones">
+            <button class="btn btn-success"><a th:href="@{/coche/nuevo}">NUEVO COCHE</a></button>
+        </div>
+        <div class="row text-center">
+            <div class="col-xl-3 col-sm-6 mb-5" th:each="coche: ${coches}">
+                <div th:replace="coche/carta-coche.html"></div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer th:replace="/includes/footer :: footer"></footer>
+<div th:replace="/includes/footer_common_links"></div> <!-- todos los js -->
+</body>
+</html>

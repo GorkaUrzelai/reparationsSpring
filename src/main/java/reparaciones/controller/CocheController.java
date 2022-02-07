@@ -6,10 +6,7 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import reparaciones.domain.Coche.DAO.CocheRepository;
 import reparaciones.domain.Coche.Model.Coche;
 import reparaciones.domain.Customer.DAO.CustomerRepository;
@@ -59,7 +56,14 @@ public class CocheController {
         for (TipoPieza tp : piezaRepository.getTiposPiezas()) {
             piezaRepository.save(new Pieza(tp, cocheBD));
         }
+        return "coche/"+cocheBD.getCocheID();
+    }
 
+    @GetMapping("/{c}")
+    public String productCharge(Model model, @PathVariable Integer c) {
+        Integer cocheID = c;
+        Optional<Coche> coche = cocheRepository.findById(cocheID);
+        model.addAttribute("coche", coche);
         return "index";
     }
 }

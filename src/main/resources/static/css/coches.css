@@ -17,12 +17,3 @@
     background: #ddd;
     color: #555;
 }
-
-.row>div>div {
-    cursor: pointer;
-}
-
-.imagenCarta{
-    max-height: 65px;
-    width: auto;
-}
