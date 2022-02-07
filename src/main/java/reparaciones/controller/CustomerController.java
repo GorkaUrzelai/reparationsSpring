@@ -6,7 +6,9 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import reparaciones.domain.Coche.DAO.CocheRepository;
 import reparaciones.domain.Coche.Model.Coche;
 import reparaciones.domain.Customer.DAO.CustomerRepository;
@@ -38,5 +40,20 @@ public class CustomerController {
 
         model.addAttribute("coches", coches);
         return "coche/coches";
+    }
+
+    @PostMapping({"/editarPerfil"})
+    public String editarPerfil(Model model,@RequestParam("username") String username, @RequestParam("email") String email) {
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String userName = user.getUsername();
+        Optional<Customer> customer = customerRepository.findByUsername(userName);
+        Customer c = null;
+        if (customer.isPresent()) {
+            c = customer.get();
+        }
+        customerRepository.editCustomer(c.getId(), username, email);
+        c = customerRepository.findCustomerById(c.getId());
+        model.addAttribute("customer", c);
+        return "index";
     }
 }
