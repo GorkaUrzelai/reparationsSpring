@@ -1,7 +1,7 @@
 <nav th:fragment="header_fragment" class="navbar navbar-expand-lg navbar-light bg-light">
 
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Hola Gorka</a>
+        <label class="navbar-brand" th:href="@{/home}">Hola Gorka</label>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -9,13 +9,13 @@
         <div class="collapse navbar-collapse ms-4" id="navbarSupportedContent">
             <ul class=" nav-pills navbar-nav me-auto mb-2 mb-lg-0 gx-3">
                 <li class="nav-item mx-1">
-                    <a class="nav-link border active" th:href="@{/home}">Inicio</a>
+                    <a class="nav-link border active" id="menuHome" th:href="@{/home}">Inicio</a>
                 </li>
                 <li class="nav-item mx-1">
-                    <a class="nav-link border" th:href="@{customer/coches}">Coches</a>
+                    <a class="nav-link border" id="menuCoches" th:href="@{/customer/coches}">Coches</a>
                 </li>
                 <li class="nav-item mx-1">
-                    <a class="nav-link border" th:href="@{/profile}">Perfil</a>
+                    <a class="nav-link border" id="menuPerfil" th:href="@{/profile}">Perfil</a>
                 </li>
             </ul>
             <button class="btn btn-outline-primary mx-3" type="submit" id="btnLogout"><a th:href="@{/}">Logout</a>
