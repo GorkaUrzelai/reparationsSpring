@@ -26,7 +26,23 @@ public class TipoPieza {
         return tipoPiezaID;
     }
 
+    public void setTipoPiezaID(Integer tipoPiezaID) {
+        this.tipoPiezaID = tipoPiezaID;
+    }
+
     public String getNombre() {
         return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Set<Pieza> getPiezas() {
+        return piezas;
+    }
+
+    public void setPiezas(Set<Pieza> piezas) {
+        this.piezas = piezas;
     }
 }
