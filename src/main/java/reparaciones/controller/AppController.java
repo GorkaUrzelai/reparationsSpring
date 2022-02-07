@@ -38,6 +38,11 @@ public class AppController {
         return "index";
     }
 
+    @GetMapping({"/perfil"})
+    public String perfil() {
+        return "perfil";
+    }
+
     @GetMapping("/register")
     public String register(Model model) {
         model.addAttribute("customer", new Customer());

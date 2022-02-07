@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>You first Spring application</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <div th:replace="/includes/header_common_links"></div> <!-- todos los css -->
+    <style>
+        label {
+            margin-top: 3px;
+            margin-bottom: 3px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav th:replace="/includes/header :: header_fragment"></nav>
+</header>
+<main>
+
+    <div class="container rounded bg-white mt-5 mb-5">
+        <div class="row d-flex justify-content-center ">
+
+            <div class="col-md-5 col-lg-8 border-right ">
+                <div class="p-3 py-5">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h4 class="text-right">Perfil</h4>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-md-6"><label class="labels">Nombre de usuario</label><input type="text"
+                                                                                                    class="form-control"
+                                                                                                    placeholder="Nombre de usuario"
+                                                                                                    value=""></div>
+                        <div class="col-md-6"><label class="labels">Email</label><input type="email"
+                                                                                        class="form-control" value=""
+                                                                                        placeholder="Email"></div>
+                    </div>
+                    <div class="row mt-3">
+                        <div class="col-md-12"><label class="labels">Contraseña actual</label><input type="text"
+                                                                                                     class="form-control"
+                                                                                                     placeholder="Contraseña actual"
+                                                                                                     value=""></div>
+                        <div class="col-md-12"><label class="labels">Nueva contraseña</label><input type="text"
+                                                                                                    class="form-control"
+                                                                                                    placeholder="Nueva contraseña"
+                                                                                                    value=""></div>
+                        <div class="col-md-12"><label class="labels">Nueva contraseña</label><input type="text"
+                                                                                                    class="form-control"
+                                                                                                    placeholder="Nueva contraseña"
+                                                                                                    value=""></div>
+                    </div>
+
+                    <div class="mt-5 text-center">
+                        <button class="btn btn-primary profile-button" type="button">Guardar perfil</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+</main>
+<footer th:replace="/includes/footer :: footer"></footer>
+<div th:replace="/includes/footer_common_links"></div> <!-- todos los js -->
+</body>
+</html>
