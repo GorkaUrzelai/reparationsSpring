@@ -53,7 +53,6 @@ public class CustomerController {
         }
         customerRepository.editCustomer(c.getId(), username, email);
         c = customerRepository.findCustomerById(c.getId());
-        model.addAttribute("customer", c);
-        return "index";
+        return "/login";
     }
 }
