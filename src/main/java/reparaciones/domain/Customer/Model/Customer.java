@@ -3,6 +3,7 @@ package reparaciones.domain.Customer.Model;
 import reparaciones.domain.Authority.Authority;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.Set;
 
@@ -18,12 +19,15 @@ public class Customer {
     private String firstName;
 
     @Column
+    @NotNull
     private String email;
 
     @Column
+    @NotNull
     private String username;
 
     @Column
+    @NotNull
     private String password;
 
     @Column

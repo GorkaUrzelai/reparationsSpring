@@ -2,9 +2,9 @@ package reparaciones.domain.Coche.Model;
 
 import reparaciones.domain.Customer.Model.Customer;
 import reparaciones.domain.Pieza.Model.Pieza;
-import reparaciones.domain.TipoPieza.Model.TipoPieza;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @Entity
@@ -16,12 +16,17 @@ public class Coche {
     private Integer cocheID;
 
     @ManyToOne
+    @NotNull
     @JoinColumn(name="customerID")
     private Customer dueño;
 
     @Column
+    @NotNull
     private String nombre;
 
+    @Column
+    @NotNull
+    private Integer kilometros;
 
 
     @OneToMany(mappedBy = "coche")

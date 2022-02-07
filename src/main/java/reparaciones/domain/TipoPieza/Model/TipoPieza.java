@@ -3,6 +3,7 @@ package reparaciones.domain.TipoPieza.Model;
 import reparaciones.domain.Pieza.Model.Pieza;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.Set;
 
 @Entity
@@ -15,6 +16,7 @@ public class TipoPieza {
     private Integer tipoPiezaID;
 
     @Column
+    @NotNull
     private String nombre;
 
     @OneToMany(mappedBy = "tipoPieza")

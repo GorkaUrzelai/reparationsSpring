@@ -1,6 +1,7 @@
 package reparaciones.domain.Authority;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="authorities")
@@ -11,6 +12,7 @@ public class Authority {
 	private Long id;
 	
 	@Column
+	@NotNull
 	private String authority;
 	
 	public String getAuthority() {
