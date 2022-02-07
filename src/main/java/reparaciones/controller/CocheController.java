@@ -14,6 +14,9 @@ import reparaciones.domain.Coche.DAO.CocheRepository;
 import reparaciones.domain.Coche.Model.Coche;
 import reparaciones.domain.Customer.DAO.CustomerRepository;
 import reparaciones.domain.Customer.Model.Customer;
+import reparaciones.domain.Pieza.DAO.PiezaRepository;
+import reparaciones.domain.Pieza.Model.Pieza;
+import reparaciones.domain.TipoPieza.Model.TipoPieza;
 
 import javax.validation.Valid;
 import java.util.Optional;
@@ -28,6 +31,8 @@ public class CocheController {
     private CocheRepository cocheRepository;
     @Autowired
     private CustomerRepository customerRepository;
+    @Autowired
+    private PiezaRepository piezaRepository;
 
 
     @GetMapping("/nuevo")
@@ -48,9 +53,13 @@ public class CocheController {
             Customer c = customer.get();
             cocheBD.setDueño(c);
         }
+        cocheRepository.save(cocheBD); //se guarda el coche en la base de datos
 
-        cocheRepository.save(cocheBD);
+        /* guardar cada pieza con relacion a este coche */
+        for (TipoPieza tp : piezaRepository.getTiposPiezas()) {
+            piezaRepository.save(new Pieza(tp, cocheBD));
+        }
+
         return "index";
     }
-
 }

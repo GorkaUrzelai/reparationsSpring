@@ -4,7 +4,7 @@ import reparaciones.domain.Authority.Authority;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.Set;
 
 @Entity
@@ -34,7 +34,7 @@ public class Customer {
     private boolean enabled;
 
     @Column
-    LocalDateTime updatedOn;
+    LocalDate updatedOn;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "authorities_users", joinColumns = @JoinColumn(name = "customer_id"),
@@ -90,7 +90,7 @@ public class Customer {
 
     @PreUpdate
     public void updationSpot() {
-        this.updatedOn = LocalDateTime.now();
+        this.updatedOn = LocalDate.now();
     }
 
     public Set<Authority> getAuthority() {

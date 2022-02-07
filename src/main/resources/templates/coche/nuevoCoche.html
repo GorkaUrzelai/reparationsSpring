@@ -17,20 +17,17 @@
                 <form class="w-lg-25 " th:action="@{/coche/crearCoche}" method="post" th:object="${coche}">
                     <div class="form-outline form-white mb-4 ">
                         <h6 class="form-label" for="nombre">Nombre</h6>
-
                         <input type="text" id="nombre" class="form-control form-control-lg" th:field="*{nombre}"/>
                     </div>
-
                     <div class="form-outline form-white mb-4 ">
                         <h6 class="form-label" for="kilometros">Kilometros</h6>
-
-                        <input type="number" id="kilometros" class="form-control form-control-lg text-center"/>
+                        <input type="number" id="kilometros" class="form-control form-control-lg text-center"
+                               th:field="*{kilometros}"/>
                     </div>
                     <div class="d-flex justify-content-end d-grid gap-2" id="acciones">
                         <button class="btn btn-danger"><a href="/">Cancelar</a></button>
                         <button class="btn btn-success" type="submit">Guardar</button>
                     </div>
-
                 </form>
             </div>
         </section>

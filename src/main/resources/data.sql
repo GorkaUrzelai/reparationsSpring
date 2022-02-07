@@ -21,6 +21,7 @@ insert into tipo_piezas(tipo_piezaid, nombre) value (1, 'Freno de disco');
 insert into tipo_piezas(tipo_piezaid, nombre) value (2, 'Neumatico');
 insert into tipo_piezas(tipo_piezaid, nombre) value (3, 'Luz');
 
+/*
 insert into coches(cocheid, nombre, customerid, kilometros) VALUES (1, 'audi a3', 2, 20000);
 
-insert into piezas(piezaid, fecha_cambio, cocheid, tipo_piezaid) VALUES (1, null, 1, 1);
+insert into piezas(piezaid, fecha_cambio, cocheid, tipo_piezaid) VALUES (1, null, 1, 1);*/

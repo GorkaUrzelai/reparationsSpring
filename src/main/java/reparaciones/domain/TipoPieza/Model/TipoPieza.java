@@ -22,6 +22,11 @@ public class TipoPieza {
     @OneToMany(mappedBy = "tipoPieza")
     Set<Pieza> piezas;
 
+    public Integer getTipoPiezaID() {
+        return tipoPiezaID;
+    }
 
-
+    public String getNombre() {
+        return nombre;
+    }
 }

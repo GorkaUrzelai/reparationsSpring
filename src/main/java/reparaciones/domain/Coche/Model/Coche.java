@@ -12,7 +12,7 @@ import java.util.Set;
 public class Coche {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer cocheID;
 
     @ManyToOne
@@ -31,6 +31,22 @@ public class Coche {
 
     @OneToMany(mappedBy = "coche")
     Set<Pieza> piezas;
+
+    public Integer getKilometros() {
+        return kilometros;
+    }
+
+    public void setKilometros(Integer kilometros) {
+        this.kilometros = kilometros;
+    }
+
+    public Set<Pieza> getPiezas() {
+        return piezas;
+    }
+
+    public void setPiezas(Set<Pieza> piezas) {
+        this.piezas = piezas;
+    }
 
     public Integer getCocheID() {
         return cocheID;
