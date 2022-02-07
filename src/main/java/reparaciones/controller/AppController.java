@@ -45,7 +45,6 @@ public class AppController {
 
     @GetMapping("/register")
     public String register(Model model) {
-        model.addAttribute("error", error);
         model.addAttribute("customer", new Customer());
         return "register";
     }
@@ -63,7 +62,7 @@ public class AppController {
             if (existeUsuarioConEseUsername(customerDB)) ReparationscalendarApplication.log.warn("usuario repetido");
             if (bindingResult.hasErrors()) ReparationscalendarApplication.log.warn("ha fallado el registro");
 
-            return "login";
+            return "register";
         }
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String encodedPassword = passwordEncoder.encode(customerDB.getPassword());
