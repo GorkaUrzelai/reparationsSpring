@@ -56,7 +56,14 @@ public class CocheController {
         for (TipoPieza tp : piezaRepository.getTiposPiezas()) {
             piezaRepository.save(new Pieza(tp, cocheBD));
         }
-        return "coche/"+cocheBD.getCocheID();
+        return "coche/" + cocheBD.getCocheID();
+    }
+
+    @PostMapping("/eliminar/{coche}")
+    public String productForm(Model model,
+                              @PathVariable Integer coche) {
+        cocheRepository.delete(cocheRepository.getById(coche));
+        return "index";
     }
 
     @GetMapping("/{c}")
