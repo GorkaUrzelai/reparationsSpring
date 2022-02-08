@@ -67,6 +67,19 @@ public class CocheController {
         return new RedirectView("/customer/coches", true);
     }
 
+    @PostMapping("/editarKilometros")
+    public String editarKilometros(Model model, @PathVariable Integer c) {
+
+        Integer cocheID = c;
+        Optional<Coche> coche = cocheRepository.findById(cocheID);
+
+
+
+
+        model.addAttribute("coche", coche);
+        return "index";
+    }
+
     @GetMapping("/{c}")
     public String productCharge(Model model, @PathVariable Integer c) {
         Integer cocheID = c;
