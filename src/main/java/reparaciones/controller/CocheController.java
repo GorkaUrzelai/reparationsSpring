@@ -61,10 +61,10 @@ public class CocheController {
     }
 
     @PostMapping("/eliminar/{coche}")
-    public String productForm(Model model,
-                              @PathVariable Integer coche) {
+    public RedirectView productForm(Model model,
+                                    @PathVariable Integer coche) {
         cocheRepository.delete(cocheRepository.getById(coche));
-        return "index";
+        return new RedirectView("/customer/coches", true);
     }
 
     @GetMapping("/{c}")

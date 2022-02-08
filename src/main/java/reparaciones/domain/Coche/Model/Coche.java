@@ -29,7 +29,7 @@ public class Coche {
     private Integer kilometros;
 
 
-    @OneToMany(mappedBy = "coche")
+    @OneToMany(cascade=CascadeType.REMOVE, mappedBy = "coche")
     Set<Pieza> piezas;
 
     public Integer getKilometros() {
