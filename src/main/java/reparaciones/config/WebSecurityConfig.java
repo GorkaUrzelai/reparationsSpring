@@ -17,7 +17,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     //Necesario para evitar que la seguridad se aplique a los resources
     //Como los css, imagenes y javascripts
     String[] resources = new String[]{
-            "/include/**", "/css/**", "/icons/**", "/img/**", "/bootstrap/**", "/js/**", "/layer/**", "/register", "/process_register", "/login"
+            "/include/**", "/css/**", "/icons/**", "/img/**", "/bootstrap/**", "/js/**", "/layer/**", "/register", "/process_register", "/login","/"
     };
 
     @Override
@@ -25,9 +25,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http
                 .authorizeRequests()
                 .antMatchers(resources).permitAll()
-                .antMatchers("/", "/index").permitAll()
-                //.antMatchers("/*").access("hasRole('ADMIN')")
-                //.antMatchers("/customer/*", "/home").access("hasRole('CUSTOMER')")
+                //.antMatchers("/*").access("hasRole('ROLE_ADMIN')")
+                //.antMatchers("/customer/*", "/home").access("hasRole('ROLE_CUSTOMER')")
                 .antMatchers("/*", "/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
