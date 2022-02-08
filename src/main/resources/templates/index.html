@@ -17,7 +17,7 @@
             <div class="d-grid gap-2 d-flex justify-content-end my-2" id="acciones">
                 <button class="btn btn-success"><a th:href="@{/coche/nuevo}">NUEVO COCHE</a></button>
 
-                <button class="btn btn-success" data-toggle="modal" data-target="#dialogoKM">ACTUALIZAR KILOMETROS</button>
+                <button class="btn btn-success" data-toggle="modal" data-target="#dialogoActualizarKilometros">ACTUALIZAR KILOMETROS</button>
 
             </div>
             <div class="tabulator">
@@ -33,6 +33,35 @@
 <footer th:replace="/includes/footer :: footer"></footer>
 <div th:replace="/includes/footer_common_links"></div> <!-- todos los js -->
 <script th:src="@{/tabla/tabla.js}"></script>
+
+<!-- MODAL -->
+<div class="modal fade" id="dialogoActualizarKilometros" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Inserte cuantos KM tiene el coche</h5>
+                <button type="button" class="btn close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="w-100 px-4">
+                    <h6 class="my-2">Ultimo registro: 20.000 kilometros</h6>
+
+                    <input class="w-100 text-center" type="number" placeholder="KM actuales"
+                           onkeydown="if(event.key==='.'){event.preventDefault();}"
+                           oninput="event.target.value = event.target.value.replace(/[^0-9]*/g,'');">
+                </div>
+            </div>
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- MODAL -->
 
 </body>
 </html>
