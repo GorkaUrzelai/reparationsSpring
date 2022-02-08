@@ -5,23 +5,28 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <div th:replace="/includes/header_common_links"></div> <!-- todos los css -->
     <style>
-        label {
+        .labels {
             margin-top: 3px;
             margin-bottom: 3px;
+        }
+        .row>*{
+            margin-bottom: 5px;
         }
     </style>
 </head>
 <body>
-<header>
-    <nav th:replace="/includes/header :: header_fragment"></nav>
-</header>
 <main>
+    <header>
+        <nav th:replace="/includes/header :: header_fragment"></nav>
+    </header>
+
 
     <div class="container rounded bg-white mt-5 mb-5">
         <div class="row d-flex justify-content-center ">
 
             <div class="col-md-5 col-lg-8 border-right ">
-                <form class="p-3 py-5" th:action="@{/customer/editarPerfil}" method="post" th:object="${customer}" autocomplete="off">
+                <form class="p-3 py-5" th:action="@{/customer/editarPerfil}" method="post" th:object="${customer}"
+                      autocomplete="off">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h4 class="text-right">Perfil</h4>
                     </div>
@@ -30,9 +35,12 @@
                                                                                                     class="form-control"
                                                                                                     placeholder="Nombre de usuario"
                                                                                                     name="username"
-                                                                                                    th:value="${customer.getUsername()}"></div>
+                                                                                                    th:value="${customer.getUsername()}">
+                        </div>
                         <div class="col-md-6"><label class="labels">Email</label><input type="email"
-                                                                                        class="form-control" name="email" th:value="${customer.getEmail()}"
+                                                                                        class="form-control"
+                                                                                        name="email"
+                                                                                        th:value="${customer.getEmail()}"
                                                                                         placeholder="Email"></div>
                     </div>
                     <div class="row mt-3">
