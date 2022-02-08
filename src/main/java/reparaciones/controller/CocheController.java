@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.view.RedirectView;
 import reparaciones.domain.Coche.DAO.CocheRepository;
 import reparaciones.domain.Coche.Model.Coche;
 import reparaciones.domain.Customer.DAO.CustomerRepository;
@@ -39,7 +40,7 @@ public class CocheController {
     }
 
     @PostMapping("/crearCoche")
-    public String processRegisterCustomer(
+    public RedirectView processRegisterCustomer(
             @Valid @ModelAttribute("coche") Coche cocheBD,
             BindingResult bindingResult) {
 
@@ -56,7 +57,7 @@ public class CocheController {
         for (TipoPieza tp : piezaRepository.getTiposPiezas()) {
             piezaRepository.save(new Pieza(tp, cocheBD));
         }
-        return "coche/" + cocheBD.getCocheID();
+        return new RedirectView("/coche/"+cocheBD.getCocheID(), true);
     }
 
     @PostMapping("/eliminar/{coche}")
