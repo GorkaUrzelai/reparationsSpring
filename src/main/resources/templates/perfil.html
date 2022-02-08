@@ -9,7 +9,8 @@
             margin-top: 3px;
             margin-bottom: 3px;
         }
-        .row>*{
+
+        .row > * {
             margin-bottom: 5px;
         }
     </style>
@@ -21,10 +22,9 @@
     </header>
 
 
-    <div class="container rounded bg-white mt-5 mb-5">
+    <div class="container mt-5 mb-5">
         <div class="row d-flex justify-content-center ">
-
-            <div class="col-md-5 col-lg-8 border-right ">
+            <div class="col-md-5 col-lg-8 border-right bg-white rounded">
                 <form class="p-3 py-5" th:action="@{/customer/editarPerfil}" method="post" th:object="${customer}"
                       autocomplete="off">
                     <div class="d-flex justify-content-between align-items-center mb-3">
@@ -52,9 +52,9 @@
                                                                                                     class="form-control"
                                                                                                     placeholder="Nueva contraseña"
                                                                                                     value=""></div>
-                        <div class="col-md-12"><label class="labels">Nueva contraseña</label><input type="password"
+                        <div class="col-md-12"><label class="labels">Repita la contraseña</label><input type="password"
                                                                                                     class="form-control"
-                                                                                                    placeholder="Nueva contraseña"
+                                                                                                    placeholder=""
                                                                                                     value=""></div>
                     </div>
                     <div class="mt-5 text-center">
