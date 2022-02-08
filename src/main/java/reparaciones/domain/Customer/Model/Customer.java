@@ -32,6 +32,8 @@ public class Customer {
     @Column
     private boolean enabled;
 
+    @Column
+    private Integer cochePreferido;
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "authorities_users", joinColumns = @JoinColumn(name = "customer_id"),
@@ -79,6 +81,14 @@ public class Customer {
 
     public boolean isEnabled() {
         return enabled;
+    }
+
+    public Integer getCochePreferido() {
+        return cochePreferido;
+    }
+
+    public void setCochePreferido(Integer cochePreferido) {
+        this.cochePreferido = cochePreferido;
     }
 
     public void setEnabled(boolean enabled) {
