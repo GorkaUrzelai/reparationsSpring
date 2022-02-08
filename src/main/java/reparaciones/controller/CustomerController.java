@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.view.RedirectView;
 import reparaciones.domain.Coche.DAO.CocheRepository;
 import reparaciones.domain.Coche.Model.Coche;
 import reparaciones.domain.Customer.DAO.CustomerRepository;
@@ -54,5 +55,21 @@ public class CustomerController {
         customerRepository.editCustomer(c.getId(), username, email);
         c = customerRepository.findCustomerById(c.getId());
         return "/login";
+    }
+
+    @GetMapping({"/cochePreferido"})
+    public RedirectView cochePreferido(Model model) {
+        User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        String userName = user.getUsername();
+        Optional<Customer> customer = customerRepository.findByUsername(userName);
+        Integer customerID = null;
+        if (customer.isPresent()) {
+            customerID = customer.get().getId();
+        }
+        Integer cochePreferido = customerRepository.findCochePreferido(customerID);
+        if(cochePreferido == null){
+            return new RedirectView("/customer/coches", true);
+        }
+        return new RedirectView("/coche/"+cochePreferido, true);
     }
 }
