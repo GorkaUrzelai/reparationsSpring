@@ -9,12 +9,30 @@
 <header>
     <nav th:replace="/includes/header :: header_fragment"></nav>
 </header>
-<main class="text-center" style="margin-top: 300px">
-    <button><a th:href="@{/register}">REGISTRARSE</a></button>
-    <button><a th:href="@{/coches}">COCHES</a></button>
-    <button><a th:href="@{/coche/nuevo}">NUEVO COCHE</a></button>
+<main class="text-center">
+
+    <div>
+        <div class="container my-2">
+
+            <div class="d-grid gap-2 d-flex justify-content-end my-2" id="acciones">
+                <button class="btn btn-success"><a href="nuevoCoche.html">NUEVO COCHE</a></button>
+
+                <button class="btn btn-success" data-toggle="modal" data-target="#dialogoKM">ACTUALIZAR KILOMETROS</button>
+
+            </div>
+            <div class="tabulator">
+                <div class="tabulator-header text-center py-2" style="font-size: 25px;">Audi A3 1999</div>
+                <div id="agrupados" class="text-center">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 </main>
 <footer th:replace="/includes/footer :: footer"></footer>
 <div th:replace="/includes/footer_common_links"></div> <!-- todos los js -->
+<script th:src="@{/tabla/tabla.js}"></script>
+
 </body>
 </html>
