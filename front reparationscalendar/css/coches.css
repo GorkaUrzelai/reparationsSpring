@@ -1,0 +1,23 @@
+.botonAjustes {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    border-radius: 50%;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+.botonAjustes:hover {
+    font-size: 1.2em;
+    background: #ddd;
+    color: #555;
+}
+
+.row>div>div {
+    cursor: pointer;
+}

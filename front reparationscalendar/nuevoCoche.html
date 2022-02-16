@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <main>
+        <!-- HEADER -->
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid mx-5">
+                    <a class="navbar-brand" href="/">Hola Gorka!</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                    <div class="collapse navbar-collapse ms-4" id="navbarSupportedContent">
+                        <ul class=" nav-pills navbar-nav me-auto mb-2 mb-lg-0 gx-3">
+                            <li class="nav-item mx-1" style="display: none;">
+                                <a class="nav-link border active">Audi A3 1999</a>
+                            </li>
+                            <li class="nav-item mx-1">
+                                <a class="nav-link border" href="/">Mis coches</a>
+                            </li>
+                        </ul>
+
+                        <ul class="ms-auto mb-2 mb-lg-0 gx-3">
+                            <button class="btn btn-outline-primary mx-3" type="Profile" id="btnProfile"><a href="/profile.html">Profile</a></button>
+                            <button class="btn btn-outline-primary mx-3" type="Logout" id="btnLogout"><a href="/login.html">Logout</a></button>
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- HEADER -->
+        <!-- VENTANA PRINCIPAL -->
+        <div class="d-flex justify-content-center">
+            <section class="text-center mt-4 py-3 rounded" id="cartaNuevoCoche">
+                <h2 class="mb-2">Escriba la informacion de su coche</h2>
+                <div class="d-flex justify-content-center mt-lg-4 mt-md-3 mt-sm-2">
+                    <div class="w-lg-25 ">
+                        <div class="form-outline form-white mb-4 ">
+                            <h6 class="form-label" for="nombre">Nombre</h6>
+
+                            <input type="text" id="nombre" class="form-control form-control-lg" />
+                        </div>
+
+                        <div class="form-outline form-white mb-4 ">
+                            <h6 class="form-label" for="kilometros">Kilometros</h6>
+
+                            <input type="number" id="kilometros" class="form-control form-control-lg text-center" />
+                        </div>
+                        <div class="d-flex justify-content-end d-grid gap-2" id="acciones">
+                            <button class="btn btn-danger"><a href="/">Cancelar</a></button>
+                            <button class="btn btn-success"><a href="/">Guardar</a></button>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- VENTANA PRINCIPAL -->
+    </main>
+    <!-- FOOTER -->
+    <footer class="text-center text-lg-start bg-light text-muted ">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom ">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block ">
+                <span>Contactame mediantes mis redes sociales:</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <a href="https://www.instagram.com/urzeelai " target="_blank " class="me-4 text-reset ">
+                    <i class="fab fa-instagram "></i>
+                </a>
+                <a href="https://www.linkedin.com/in/gorka-urzelai-a26369206/ " target="_blank " class="me-4 text-reset ">
+                    <i class="fab fa-linkedin "></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class=" ">
+            <div class="container text-center text-md-start mt-5 ">
+                <!-- Grid row -->
+                <div class="row mt-3 ">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 ">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4 ">
+                            <i class="fas fa-gem me-3 "></i>REPARACIONES GORKA
+                        </h6>
+                        <p>
+                            Aplicacion web para gestion un correcto mantenimiento de piezas de coche
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4 ">
+                        <!-- Links -->
+                        <!--
+                        <h6 class="text-uppercase fw-bold mb-4 ">
+                            Products
+                        </h6>
+                        <p>
+                            <a href="#! " class="text-reset ">Angular</a>
+                        </p>
+                        <p>
+                            <a href="#! " class="text-reset ">React</a>
+                        </p>
+                        <p>
+                            <a href="#! " class="text-reset ">Vue</a>
+                        </p>
+                        <p>
+                            <a href="#! " class="text-reset ">Laravel</a>
+                        </p>
+                        -->
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4 ">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4 ">
+                            LINKS DE REFERENCIA
+                        </h6>
+                        <p>
+                            <a href="#! " class="text-reset ">Precio</a>
+                        </p>
+                        <p>
+                            <a href="#! " class="text-reset ">Configuracion</a>
+                        </p>
+                        <p>
+                            <a href="#! " class="text-reset ">Ayuda</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4 ">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4 ">
+                            Contact
+                        </h6>
+                        <p><i class="fas fa-home me-3 "></i> Bergara, Guipúzcoa, ES</p>
+                        <p>
+                            <i class="fas fa-envelope me-3 "></i> gorkaurzelai2000@gmail.com
+                        </p>
+                        <p><i class="fas fa-phone me-3 "></i> +34 660 261 424</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4 " style="background-color: rgba(0, 0, 0, 0.05); ">
+            © 2021 Copyright:
+            <a class="text-reset fw-bold " href="https://gorkaurzelai.github.io/ ">gorkaurzelai.github.io</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- FOOTER -->
+
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js " crossorigin="anonymous "></script>
+    <script src="bootstrap/bootstrap.js "></script>
+</body>
+
+</html>
